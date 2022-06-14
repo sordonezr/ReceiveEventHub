@@ -13,6 +13,6 @@ await using (var consumer = new EventHubConsumerClient(consumerGroup, connection
 
     await foreach (PartitionEvent receivedEvent in consumer.ReadEventsAsync(cancellationSource.Token))
     {
-        Console.WriteLine(receivedEvent.Data.EventBody);
+        Console.WriteLine($" \n {receivedEvent.Data.EventBody}");
     }
 }
